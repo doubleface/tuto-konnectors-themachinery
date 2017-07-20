@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "name": "tuto",
+  "type": "node",
+  "slug": "tuto",
+  "description": "description",
+  "source": "git://github.com/cozy/cozy-konnector-thename.git",
+  "fields": {
+    "save_folder": {
+      "doctype": "io.cozy.files",
+      "type": "folder"
+    },
+    "account": {
+      "doctype": "io.cozy.accounts",
+      "account_type": "accounttype",
+      "accountFormat": "login,password"
+    }
+  },
+  "locales": {
+    "fr": {
+      "description": "Récupère toutes vos factures",
+      "permissions": {
+        "bills": {
+          "description": "Utilisé pour sauvegarder les données de facturation"
+        },
+        "files": {
+          "description": "Utilisé pour sauvegarder les factures"
+        }
+      }
+    }
+  },
+  "permissions": {
+    "bills": {
+      "description": "Required to get the bills",
+      "type": "io.cozy.bills",
+      "verbs": ["GET"]
+    },
+    "accounts": {
+      "description": "Required to get the accounts",
+      "type": "io.cozy.accounts"
+    }
+  },
+  "developer": {
+    "name": "cozy",
+    "url": "cozy.io"
+  }
+}
